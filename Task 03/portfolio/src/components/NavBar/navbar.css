@@ -1,0 +1,147 @@
+.navbar {
+    background: rgb(30, 30, 30);
+    height: 5rem;
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.logo {
+    object-fit: cover;
+    height: 12rem;
+    width: 12rem;
+}
+
+.desktopMenuListItem {
+    margin: 1rem;
+    cursor: pointer;
+}
+a{
+    color: whitesmoke;
+}
+.resume-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #1f2937; 
+    background-color: white;
+    border: 1px solid rgba(107, 114, 128, 0.3); /* gray-500/30 */
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .resume-button:hover {
+    color: #60a5fa; 
+    background-color: rgba(96, 165, 250, 0.1); /* blue-400/10 */
+    border-color: rgba(96, 165, 250, 0.3); /* blue-400/30 */
+  }
+  
+  .resume-button:active {
+    transform: scale(0.95);
+  }
+  
+  .resume-icon {
+    display: inline-block;
+  }
+
+.desktopMenuListItem:hover {
+    color: rgb(167, 167, 117);
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid rgb(143, 143, 96);
+}
+
+.desktopMenuBtn {
+    background: white;
+    color: black;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    border-radius: 2rem;
+     cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.desktopMenuBtn:hover {
+  background-color:#ffc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.desktopMenuBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ .desktopMenuBtn:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+
+.desktopMenuImg {
+    object-fit: cover;
+    height: 1rem;
+    width: 1rem;
+    margin: 1rem;
+}
+
+.active {
+    color: rgb(189, 135, 188);
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid rgb(189, 135, 188);
+}
+
+.mobMenu {
+    display: none;
+    object-fit: cover;
+    height: 1.8rem;
+}
+
+.navMenu {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height:fit-content;
+    min-width: 15rem;
+    background: rgb(40, 40, 40);
+    border-radius: 1rem;
+}
+
+.listItem {
+    color: white;
+    padding: 0.5rem 3rem;
+    margin: 0.25rem;
+    background: rgb(30, 30, 30);
+}
+
+@media screen and (max-width:720px) {
+    .mobMenu {
+        display: flex;
+    }
+    .resume-button{
+        display: none;
+    }
+    .desktopMenu {
+        display: none;
+    }
+    .desktopMenuBtn {
+        display: none;
+    }
+}
+
+  
+  

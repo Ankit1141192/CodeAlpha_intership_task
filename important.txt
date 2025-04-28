@@ -1,0 +1,11 @@
+😊 When you see my project task 03, then you need to:
+
+👉 npm install 
+
+and later:
+
+👉 npm run start 
+
+because I created my portfolio in React JS. 😊
+
+Thank you for seeing this file! 😊

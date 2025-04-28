@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery & Slideshow</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery a {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .gallery img {
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            border-radius: 8px;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Lightbox Effect */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            width: 60%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox a {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Slideshow Button */
+        .slideshow-button {
+            margin: 20px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .slideshow-button:hover {
+            background: #0056b3;
+        }
+
+        /* Slideshow (Initially Hidden) */
+        #slideshow-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin-top: 15%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #slideshow-container:target {
+            display: flex;
+        }
+
+        .slideshow {
+            position: relative;
+            max-width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            animation: slide 8s infinite;
+        }
+
+        .slides img {
+            width: 33.33%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @keyframes slide {
+            0%, 33% { transform: translateX(0); }
+            34%, 66% { transform: translateX(-33.33%); }
+            67%, 100% { transform: translateX(-66.66%); }
+        }
+
+        /* Close Button */
+        .close-btn {
+            margin-top: 20px;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            background: red;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: darkred;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Image Gallery</h2>
+    <div class="gallery">
+        <a href="#img1">
+            <img src="https://cdn.pixabay.com/photo/2023/03/27/18/06/bird-7881393_1280.jpg" alt="Bird Beautiful Flowers">
+            <br>Bird Beautiful Flowers
+        </a>
+        <a href="#img2">
+            <img src="https://cdn.pixabay.com/photo/2018/01/12/14/24/night-3078326_1280.jpg" alt="Night forest">
+            <br>Night Forest
+        </a>
+        <a href="#img3">
+            <img src="https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg" alt="Fantasy Butterflies">
+            <br>Fantasy Butterflies
+        </a>
+    </div>
+
+    <div id="img1" class="lightbox">
+        <a href="#">×</a>
+        <img src="https://cdn.pixabay.com/photo/2023/03/27/18/06/bird-7881393_1280.jpg" alt="Bird Beautiful Flowers">
+    </div>
+    <div id="img2" class="lightbox">
+        <a href="#">×</a>
+        <img src="https://cdn.pixabay.com/photo/2018/01/12/14/24/night-3078326_1280.jpg" alt="Night forest">
+    </div>
+    <div id="img3" class="lightbox">
+        <a href="#">×</a>
+        <img src="https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg" alt="Fantasy Butterflies">
+    </div>
+
+    <!-- Button to Show Slideshow -->
+    <a href="#slideshow-container" class="slideshow-button">Show Slideshow</a>
+
+    <div id="slideshow-container">
+        <div class="slideshow">
+            <div class="slides">
+                <img src="https://cdn.pixabay.com/photo/2023/03/27/18/06/bird-7881393_1280.jpg" alt="Slide 1">
+                <img src="https://cdn.pixabay.com/photo/2018/01/12/14/24/night-3078326_1280.jpg" alt="Slide 2">
+                <img src="https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg" alt="Slide 3">
+            </div>
+        </div>
+
+        <a href="#" class="close-btn">Hide Slideshow</a>
+    </div>
+
+</body>
+</html>

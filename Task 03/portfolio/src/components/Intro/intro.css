@@ -1,0 +1,132 @@
+#intro {
+    height: calc(70vh - 4rem);
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bg {
+    position: absolute;
+    top: -4rem;
+    right: 0;
+    z-index: -1;
+    object-fit: cover;
+    height: 100vh;
+}
+
+.introContent {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hello {
+    font-size: 1.75rem;
+    font-weight: 100;
+}
+
+.introName {
+    color: #1841bc;
+}
+
+.introPara {
+    font-size: medium;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    line-height: 1.6;
+    color: #948a8a;
+}
+
+/* Divider Line */
+.introDivider {
+    width: 60px;
+    height: 4px;
+    background-color: #1841bc;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+}
+
+/* Button container */
+.introBtns {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1841bc;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btnImg {
+    object-fit: cover;
+    margin-right: 0.5rem;
+    height: 1rem;
+}
+
+.animated-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c010a5;
+}
+
+.cursor {
+    color: #ffcc00;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .bg {
+        right: -10vw;
+    }
+    .introContent {
+        font-size: 10vw;
+    }
+    .hello {
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bg {
+        right: -20vw;
+    }
+    .introBtns {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
